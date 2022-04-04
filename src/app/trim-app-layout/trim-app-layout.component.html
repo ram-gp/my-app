@@ -1,0 +1,45 @@
+<uxa-app-layout>
+    <uxa-masthead>
+      <uxa-masthead-icon color="steelblue">CM</uxa-masthead-icon>
+      <uxa-toolbar>
+        <uxa-toolbar-start>
+            <ul class="list-group">
+                <li 
+                    *ngFor="let clause of SearchClause"
+                    class="list-group-item">
+                    {{clause}}
+                </li>
+              </ul>
+          
+        </uxa-toolbar-start>
+        <uxa-toolbar-end>
+          <uxa-input-group>
+            <input
+              uxa-text-input
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <uxa-trailing-addon>
+              <button uxa-icon-flat-button variant="secondary">
+                <!-- <uxa-icon name="search"></uxa-icon> -->
+              </button>
+            </uxa-trailing-addon>
+          </uxa-input-group>
+          <button uxa-button size="small" variant="primary">Button</button>
+          <theme-selector></theme-selector>
+        </uxa-toolbar-end>
+      </uxa-toolbar>
+    </uxa-masthead>
+    
+    <uxa-app-content-layout>
+      <uxa-masthead-secondary>
+        <a uxa-masthead-tab selected="true">Overview</a>
+        <a uxa-masthead-tab>Dashboard</a>
+      </uxa-masthead-secondary>
+  
+      <div ngProjectAs="uxa-side-menu" class="side-menu">Side Navigation</div>
+  
+      <div class="main-content">Main Page Content</div>
+    </uxa-app-content-layout>
+  </uxa-app-layout>
