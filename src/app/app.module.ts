@@ -15,13 +15,15 @@ import { UxaMastheadModule } from "@ux-aspects-angular/masthead";
 import { UxaToolbarModule } from "@ux-aspects-angular/toolbar";
 import { UxaIconModule, search, addressBook } from '@ux-aspects-angular/icon';
 import { UxaInputGroupModule } from "@ux-aspects-angular/input-group";
-import { MsalModule } from '@azure/msal-angular';
-import { PublicClientApplication } from '@azure/msal-browser';
+import { UxaButtonModule } from "@ux-aspects-angular/button";
+import { SearchComponent } from './Component/search/search.component';
+const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 @NgModule({
     declarations: [
         AppComponent,
         ThemeSelectorComponent,
-        TrimAppLayoutComponent
+        TrimAppLayoutComponent,
+        SearchComponent
     ],
     imports: [
         BrowserModule,
@@ -37,7 +39,8 @@ import { PublicClientApplication } from '@azure/msal-browser';
         UxaMastheadModule,
         UxaToolbarModule,
         UxaIconModule.withIcons({ search, addressBook }),
-        UxaInputGroupModule
+        UxaInputGroupModule,
+        UxaButtonModule
     ],
     providers: [
     { provide: UxaDateTimeAdapter, useClass: UxaMomentDateTimeAdapter }
