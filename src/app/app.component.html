@@ -16,5 +16,22 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<app-trim-app-layout></app-trim-app-layout>
+<uxa-app-layout>
+    <uxa-masthead>
+      <uxa-masthead-icon color="steelblue">{{productName}}</uxa-masthead-icon>
+      <app-header></app-header>
+    </uxa-masthead>
+  
+    <uxa-app-content-layout>
+      <uxa-masthead-secondary>
+        <app-secondary-header></app-secondary-header>
+      </uxa-masthead-secondary>
+  
+      <div ngProjectAs="uxa-side-menu" class="side-menu">
+        <app-side-nav></app-side-nav>
+      </div>
+  
+      <div class="main-content"><app-main-content></app-main-content></div>
+    </uxa-app-content-layout>
+  </uxa-app-layout>
 <router-outlet></router-outlet>
